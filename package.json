@@ -1,0 +1,57 @@
+{
+  "name": "shiftpay",
+  "private": true,
+  "version": "2.0.0",
+  "description": "ShiftPay — punto de venta y administración para car wash, barberías y comercios",
+  "author": "ShiftPay (prototipo)",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "app": "npm run build && electron .",
+    "icon": "electron electron/make-icon.cjs",
+    "dist:win": "npm run build && electron-builder --win nsis --x64"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "build": {
+    "appId": "app.shiftpay.pos",
+    "productName": "ShiftPay",
+    "copyright": "Prototipo con datos ficticios",
+    "directories": { "output": "release", "buildResources": "build" },
+    "files": ["dist/**/*", "electron/main.cjs", "build/icon.png", "package.json"],
+    "asar": true,
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ShiftPay",
+      "artifactName": "ShiftPay-Setup-${version}.${ext}",
+      "installerLanguages": ["es_ES"],
+      "language": "3082",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
