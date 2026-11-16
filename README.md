@@ -3,7 +3,7 @@
 Punto de venta y back office en español para **car wash, barberías y comercios**, con citas, membresías,
 empleados, inventario y reportes anuales. Funciona en el navegador y como **app de escritorio para Windows**.
 
-Toma como referencia los flujos de un POS existente (GCR) sin reutilizar su código, recursos, credenciales ni datos.
+Toma como referencia los flujos de un POS existentes sin reutilizar su código, recursos, credenciales ni datos.
 El diseño es propio, de inspiración macOS (títulos grandes, barra lateral translúcida, controles refinados), sin
 logotipos ni recursos de Apple.
 
